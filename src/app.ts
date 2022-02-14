@@ -1,10 +1,17 @@
 import express, {Request, Response} from 'express'
 import { json, urlencoded } from 'body-parser'
 import Joi from 'joi'
+import indexRoutes from './routes/index'
 
 const app = express()
 const port = process.env.PORT || 3000
-const countries = [
+
+interface country {
+    id:number,
+    name:string
+}
+
+const countries:country[] = [
     {id:1, name:'Albania'},
     {id:2, name:'Burundi'},
     {id:3, name:'Chipre'},
@@ -13,6 +20,7 @@ const countries = [
 
 app.use(json())
 app.use(urlencoded({ extended: true }))
+app.use(indexRoutes)
 
 app.get('/', (req:Request, res:Response) => {
     res.send('Hello world from Express')
