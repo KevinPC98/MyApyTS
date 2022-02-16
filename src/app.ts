@@ -2,11 +2,12 @@ import express, {Request, Response} from 'express'
 import { json, urlencoded } from 'body-parser'
 import Joi from 'joi'
 import indexRoutes from './routes/index'
+import authRoutes from './routes/auth'
 
 const app = express()
 const port = process.env.PORT || 3000
 
-interface country {
+/* interface country {
     id:number,
     name:string
 }
@@ -21,6 +22,7 @@ const countries:country[] = [
 app.use(json())
 app.use(urlencoded({ extended: true }))
 app.use(indexRoutes)
+app.use('/api/auth', authRoutes)
 
 app.get('/', (req:Request, res:Response) => {
     res.send('Hello world from Express')
@@ -88,9 +90,6 @@ app.delete('/api/countries/:id', (req, res) => {
     res.send(countries)
 })
 
-app.listen(port, () => {
-    console.log(`Server is runnning on port ${port} ...`)
-})
 
 function existsCountry(id:string) {
     return countries.find(c => c.id === parseInt(id))
@@ -103,3 +102,7 @@ function validarCountry(name:string) {
     
     return schema.validate({ name });
 }
+ */
+app.listen(port, () => {
+    console.log(`Server is runnning on port ${port} ...`)
+})

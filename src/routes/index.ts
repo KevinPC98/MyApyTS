@@ -1,6 +1,5 @@
-import { create } from 'domain'
 import { Router } from 'express'
-import { createUser, deleteUser, getUsers, getUsersById, updateUser } from '../controller/index.controller'
+import { createUser, deleteUser, getUsers, getUsersById, updateUser } from '../controllers/index.controller'
 
 const router = Router()
 
@@ -10,9 +9,5 @@ router.get('/users/:id', getUsersById)
 router.post('/users/', createUser)
 router.put('/users/:id', updateUser)
 router.delete('/users/:id', deleteUser)
-/* 
-router.post('/users/', getUser)
-router.put('/users/:id', getUser)
-*/
 
 export default router
