@@ -1,17 +1,17 @@
-import express, {Request, Response} from 'express'
-import { json, urlencoded } from 'body-parser'
-import Joi from 'joi'
-import indexRoutes from './routes/index'
-import authRoutes from './routes/auth'
+import express, { Request, Response } from "express";
+import { json, urlencoded } from "body-parser";
+import Joi from "joi";
+import indexRoutes from "./routes/index";
+import authRoutes from "./routes/auth";
 
-const app = express()
-const port = process.env.PORT || 3000
+const app = express();
+const port = process.env.PORT || 3000;
 
 /* interface country {
     id:number,
     name:string
 }
-
+//solving fryday
 const countries:country[] = [
     {id:1, name:'Albania'},
     {id:2, name:'Burundi'},
@@ -104,5 +104,5 @@ function validarCountry(name:string) {
 }
  */
 app.listen(port, () => {
-    console.log(`Server is runnning on port ${port} ...`)
-})
+  console.log(`Server is runnning on port ${port} ...`);
+});
